@@ -9,7 +9,7 @@
 \usepackage[english]{babel}
 \usepackage{csquotes}
 \usepackage[style=authoryear,backend=biber,maxcitenames=2]{biblatex}
-\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref} 
 \usepackage{cleveref}
 \usepackage{nomencl}
 \makenomenclature
@@ -44,6 +44,12 @@
 \maketitle
 \vspace{\stretch{1}}
 \abstract{\noindent This study attempts to show relation (covariates) between Private Equity funds' Environmental, Social, and Governance (ESG) management, and their financial performance. For this study we used data from the investments of two European Development Finance Institutes and answers from a questionnaire sent to the invested-in funds. We find that there are some aspects of ESG management which have a covariation with financial performance. This allows us to formulate expectations for the financial performance of future funds, based on their ESG approach.}
+
+% BQ 5-2-15
+% suggestie kleine aanpassingen abstract
+%\abstract{This study investigates the relation between Private Equity funds' Environmental, Social, and Governance (ESG) management, and their financial performance. We used data from the investments of two European Development Finance Institutes and answers from a questionnaire sent to the invested-in funds. We find that there are some aspects of ESG management which have significant covariance with financial performance. This result allows us to formulate expectations on the financial performance of future investment candidates, based on their ESG approach.}
+
+
 \pagebreak	
 
 \tableofcontents
@@ -58,14 +64,27 @@ Implementing Environmental, Social and Governance (ESG)\nomenclature{ESG}{Enviro
 
 \marginpar{purpose} The purpose of this study is to see if there is a relation to be found between Private Equity (PE)\nomenclature{PE}{Private Equity} funds' Environmental and Social Management Systems (ESMS)\nomenclature{ESMS}{Environmental and Social Management Systems}, and their financial performance. For this we used data from the investments of two European Development Finance Institutes (EDFIs), namely FMO \nomenclature{FMO}{Dutch Development Bank - Financieringsmaantschappij voor Ontwikkelingslanden} and DEG \nomenclature{DEG}{Deutsche Entwicklungsgesellschaft}, and answers from a questionnaire sent to the invested-in funds. We find that there are some aspects of ESMS which appear to have an either positive or negative covariation with financial performance.\\
 
-\marginpar{background} Within DFIs it is often assumed that taking ESG aspects into consideration of investments decisions increases and stabilizes financial returns of investments. The way investments funds are integrating ESG aspects in their decision making process is via an ESMS. In an ESMS the governance aspect is usually not considered and can create confusion in the terminology: Industry standard is the expression ESG whereas in the management systems asked by the DFIs focus mainly the environmental and social aspect. \\
+% BQ 5-2-15: returns ON investments ipv of
+% " vervang zin 2 (oud: The way investments funds are integrating ESG aspects in their decision making process is via an ESMS.)
+% " vervang zin 3 (oud: In an ESMS the governance aspect is usually not considered and can create confusion in the terminology: Industry standard is the expression ESG whereas in the management systems asked by the DFIs focus mainly the environmental and social aspect.)
+\marginpar{background} Within DFIs it is often assumed that taking ESG aspects into consideration of investments decisions increases and stabilizes financial returns on investments. Investment funds integrate ESG aspects of their decision making process by means of an ESMS. Generally, governance is considered to not be included is an ESMS. In order to avoid confusion, we therefore follow the industry standard of using the term ESG.  \\
 
-ESG issues are a particular set of extra or non-financial aspects of a company, which can be material to its success and can also be representative of management quality. Additionally, it can give an indication of future trends and reflect issues regarding climate change that can change the economic landscape in which companies operate \parencite[cf.][1]{llewellyn2007business}. If ESG issues are material to business success, then there should be a relation between strong ESG performance and financial results, be it causal relation or any other relation. 
+% BQ 5-2-15: toegevoegd: both
+ESG issues are a particular set of extra or non-financial aspects of a company, which can both be material to its success and can also be representative of management quality. Additionally, it can give an indication of future trends and reflect issues regarding climate change that can change the economic landscape in which companies operate \parencite[cf.][1]{llewellyn2007business}. 
+% BQ 5-2-15: ik heb een beetje moeite met deze zin, de eerste helft houd een causaal verband in, de twee helft komt daar half op terug
+%If ESG issues are material to business success, then there should be a relation between strong ESG performance and financial results, be it causal relation or any other relation. 
+% BQ 5-2-15: mijn suggestie:
+If this holds true, then we would expect to observe both causal and non-causal covariance.
+Causal covariance would be caused by direct effect of ESG on returns and variance.
+Non-causal covariance would be observed due to confounding (unobserved) variables such as quality of management effecting both the ESG approach and non-ESG operational decision making.
 
 \newpage
-\marginpar{fund specifics}All ESG studies concerns investments of different investment vehicles in companies. Private equity funds, in which the DFI's have invested, do the same. However, the DFI's don't have the data of the underlying companies in which the funds are investing. The ESG information available concerns only the ESMS. Applying and ESMS with certain ESG criteria therefore could be a proxy of the ESG performance of the investees. \\
+% BQ 5-2-15: concern ipv concerns, DFIs ipv DFI's, do not ipv don't, an ESMS ipv and ESMS
+\marginpar{fund specifics}All ESG studies concern investments of different investment vehicles in companies. Private equity funds, in which the DFI's have invested, do the same. However, the DFIs do not have the data of the underlying companies in which the funds are investing. The ESG information available concerns only the ESMS. Applying an ESMS with certain ESG criteria therefore could be a proxy of the ESG performance of the investees. \\
 
-\marginpar{ESG studies} In the past, various (meta) analysis have been performed to investigate the relations between ESG and financial performance \parencites{orlitzky2003corporate}{mercer2} with mixes results. Deutsche Bank Climate Change Advisors \parencite{dbcca} performed a more recent meta-analysis based on academic research in the period from 1991 - 2009. The conclusions of this analysis are:
+% BQ 5-2-15: conducted ipv performed, investigating ipv to investigate
+% BQ 5-2-15: "having mixeD results" ipv "with mixes results"
+\marginpar{ESG studies} In the past, various (meta) analysis have been conducted, investigating the relations between ESG and financial performance \parencites{orlitzky2003corporate}{mercer2}, having mixed results. Deutsche Bank Climate Change Advisors \parencite{dbcca} performed a more recent meta-analysis based on academic research in the period 1991-2009. The conclusions of this analysis are:
 
 \begin{itemize}\itemsep1pt \parskip0pt \parsep0pt
 \item The mixed and sometimes contradictory results in previous research was a result of mixing all types of "sustainable investing". Unscrambling the different types of "sustainable investing" (SRI, ESG, IR etc) gives a clearer picture with regard to financial results and/or costs of capital;
@@ -76,7 +95,8 @@ ESG issues are a particular set of extra or non-financial aspects of a company, 
 \end{itemize}
 
 \newpage
-\marginpar{hypothesis} For our study we formalized the following research question, whereby $x_i$ denotes all the questions in the questionnaire sent to the invested-in funds. The research questions is formalized as:\\
+% BQ 5-2-15: hypothesis ipv research question
+\marginpar{hypothesis} For our study we formalized the following hypothesis, whereby $x_i$ denotes all the questions in the questionnaire sent to the invested-in funds. The research questions is formalized as:\\
 \\
 Formal statement For $x_i$ is $x_1...x_n$:\\
 \\
@@ -86,15 +106,20 @@ H\textsubscript{0}:&There is no covariation between $x_i$ and the financial perf
 H\textsubscript{1}:&There is a covariation between $x_i$  and the financial performance of a private equity fund.
 \end{tabular}\\
 \\
-
-\marginpar{paper overview} A chronological description of how this study is structured can be found in \cref{sec:approach}. \Cref{sec:data} gives an overview of the data used and provides explanations for the suitability. After which \cref{sec:methodology} discusses the methodology used in the analysis (command code in \cref{app:commandcode}). \Cref{sec:results} gives a brief  of the results we found. Finally in \cref{sec:conclusions} we draw conclusions from the results and indicate some limitations of these results.
+% BQ 5-2-15: report overview ipv paper overview
+% BQ 5-2-15: section 5 gives a brief OVERVIEW of..
+% BQ 5-2-15: discuss ipv indicate
+\marginpar{report overview} A chronological description of how this study is structured can be found in \cref{sec:approach}. \Cref{sec:data} gives an overview of the data used and provides explanations for the suitability. After which \cref{sec:methodology} discusses the methodology used in the analysis (command code in \cref{app:commandcode}). \Cref{sec:results} gives a brief overview of the results we found. Finally in \cref{sec:conclusions} we draw conclusions from the results and discuss some limitations of these results.
 
 \newpage
 \section{Approach}
 \label{sec:approach}
-Here we briefly describe the approach that was used. We first outline the different phases of the study chronologically and then describe each phase individually. The study was divided in roughly five phases. The first being the planning and discussion phase. The second was the pilot phase. Data collection was done in the third phase. Lastly, the fourth phase focused on data analysis and reporting.\\
+Here we briefly describe the approach that was used. We first outline the different phases of the study chronologically and then describe each phase individually. The study was divided in roughly five phases. The first being the planning and discussion phase. The second was the pilot phase. Data collection was done in the third phase.
+% BQ 5-2-15: five phases
+% Lastly, the fourth phase focused on data analysis and reporting.
+The fourth phase involved the data analysis. Finally, reporting was done in the fifth phase.\\
 
-\marginpar{planning, discussion} The first phase was set out for planning and initial conceptual discussions and spanned about six weeks. Whereby we considered the different problems which we expected to confront during the course of the study as well as the problems that would present themselves when interpreting the results. The theoretical problems related to the interpretation are discussed in \cref{sec:methodology}. As sources for our study we settled on financial statistics as they are available through internal account systems. The ESG element of our study was analyzed using a questionnaire (i.e.~self declaration), to be filled out by the selected funds. This questionnaire is based on a questionnaire developed by \textcite{renssen}, but was adapted to suit the specific purpose of this study.\\
+\marginpar{planning, discussion} The first phase was set out for planning and initial conceptual discussions and spanned about six weeks. Whereby we considered the different problems which we expected to	 confront during the course of the study as well as the problems that would present themselves when interpreting the results. The theoretical problems related to the interpretation are discussed in \cref{sec:methodology}. As sources for our study we settled on financial statistics as they are available through internal account systems. The ESG element of our study was analyzed using a questionnaire (i.e.~self declaration), to be filled out by the selected funds. This questionnaire is based on a questionnaire developed by \textcite{renssen}, but was adapted to suit the specific purpose of this study.\\
 
 \marginpar{pilot} After having developed an initial version of the questionnaire, we sent this out to a small number of funds selected for our pilot phase. By running a pilot round we were able to evaluate the questionnaire using input from respondents. This allowed us to clarify questions where needed, and make sure that they give an accurate representation of ESMS. A number of evaluations were done face to face, the rest was done through conference calls. The evaluations were used to produce an improved version of the questionnaire (see \cref{app:questionnaire}). This phase also took about four weeks.\\
 \newpage
@@ -119,7 +144,8 @@ For this study, we gathered data on financial performance of funds and on ESG ma
 
 \newpage
 \subsection{Financial performance indicators}
-There are a number of issues related to the selection of the correct measures of financial performance. Most notable is the issue of which currency to use for denotation.\\
+% BQ 5-2-15: denomination ipv denotation
+There are a number of issues related to the selection of the correct measures of financial performance. Most notable is the issue of which currency to use for denomination.\\
 
 \marginpar{currencies} The matter of currencies used is somewhat complicated. The investments of funds are usually in the target countries' local currencies. However, committed amounts are, according to industry practice, denoted in U.S.~Dollars. Furthermore, since FMO and DEG are based in the Eurozone, transactions are recorded in Euro. These Euro transactions formed the basis for the calculation of our Euro denoted financials. Using the Bloomberg's end-of-day exchange rates, each amount is also converted into U.S. Dollars after which the financials are calculated again.\\
 
@@ -180,10 +206,11 @@ Internal implementation of ESG policy and procedures is reviewed on a regular ba
 \newpage
 \section{Methodology}
 \label{sec:methodology}
-In this section we present a more technical discussion of some of the theoretical issues we confronted during the course of the study. The section starts with a discussion of the covariation and causality, whereby we clarify our approach of looking at covariation rather than causality. After which we describe the empirical methodology used.
+% BQ 5-2-15: covariance ipv covariation 4x
+In this section we present a more technical discussion of some of the theoretical issues we confronted during the course of the study. The section starts with a discussion of the covariance and causality, whereby we clarify our approach of looking at covariance rather than causality. After which we describe the empirical methodology used.
 
 \subsection{Covariation and causation}
-Here we discuss why a covariation can be expected and how it relates to a causal relation.\\
+Here we discuss why a covariance can be expected and how it relates to a causal relation.\\
 
 \marginpar{causal effect} First and foremost ESG risk management can a have a causal effect on financial performance. Reasons for this can be the mitigation related to for example reputational damage or government supervision.\\
 
@@ -191,22 +218,31 @@ Here we discuss why a covariation can be expected and how it relates to a causal
 
 \marginpar{reverse causality} Lastly we can even consider the case for reverse causality, whereby a financially well performing fund has the resources to implement sound ESG risk management.\\
 
-To ensure that our findings are as reliable as possible, and considering the above, we decided to the focus on the covariation between these ESMS and financials.\\
+To ensure that our findings are as reliable as possible, and considering the above, we decided to the focus on the covariance between these ESMS and financials.\\
 
 \subsection{Empirical Methodology}
-In this section we describe the methodology employed in the course of this study. In particular it describes our approach to dealing with the problem related to the degrees of freedom which occurred.\\
+% BQ 5-2-15: particular WE (-it) describe (-s) 
+% " : approach FOR (-to)
+In this section we describe the methodology employed in the course of this study. In particular we describe our approach for dealing with the problem related to the degrees of freedom which occurred.\\
 
-\marginpar{degrees of freedom} As our criteria for inclusion in the dataset were somewhat stringed, our dataset was a bit small. This combined with the large number of variables, due to the inclusion of all questions caused a degrees of freedom problem in our analysis.\\
+% BQ 5-2-15: stringent ipv stinged
+% " : somewhat ipv a bit
+% " : -This ..combined 
+% " : +, ...caused
+\marginpar{degrees of freedom} As our criteria for inclusion in the dataset were somewhat stringent, our dataset was somewhat small. Combined with the large number of variables, due to the inclusion of all questions, caused a degrees of freedom problem in our analysis.\\
 
-\marginpar{grouping} In order to cope with the problem of the degrees of freedom, we used the following workaround. We first grouped the questions according to which aspect of ESG management systems the question addressed. We then regressed the explanandum (IRR) on each of the groups individually using Ordinary Least Squares (i.e.~standard regression). By doing this we limit the number of variables in each regression, and thus circumvent the degrees of freedom problem. Since questions within a group are expected to be heavily correlated, all coefficients are expected to be underestimated by the regression. However, it allows us to see which variables are more explanatory. We then select these highly explanatory variables for a final regression equation.\\
+% BQ 5-2-15: by doing SO ipv this
+\marginpar{grouping} In order to cope with the problem of the degrees of freedom, we used the following workaround. We first grouped the questions according to which aspect of ESG management systems the question addressed. We then regressed the explanandum (IRR) on each of the groups individually using Ordinary Least Squares (i.e.~standard regression). By doing so we limit the number of variables in each regression, and thus circumvent the degrees of freedom problem. Since questions within a group are expected to be heavily correlated, all coefficients are expected to be underestimated by the regression. However, it allows us to see which variables are more explanatory. We then select these highly explanatory variables for a final regression equation.\\
 
 \marginpar{ordinary least squares} As mentioned above, we chose to use the ordinary least squares (OLS)\nomenclature{OLS}{Ordinary Last Square} regression algorithm. Since OLS is a straightforward statistical method we avoid the problems which tend to occur when using more complicated statistical procedures.
 
 
 \subsection{Limitations}
-The study has two limitations: 
+% BQ 5-2-15: + MAIN
+The study has two main limitations: 
 \begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
-\item The sample size was rather small. Event we could find two significant variables a larger data set would probably underpin these variables better and we might find additional significant variables;
+% BQ 5-2-15: zin herschreven, oud: Event we could find two significant variables a larger data set would probably underpin these variables better and we might find additional significant variables;
+\item The sample size was rather small. We found two significant variables, a larger data set would probably support these significant variables better and might reveal additional significant variables;
 \item The study is done for a niche  PE segment market. The conclusions can only be applied to investments in the emerging markets, i.g. similar to an investment portfolio like DEG and FMO.
 \end{enumerate}
 
@@ -253,27 +289,39 @@ Internal implementation of ESG policy and procedures is reviewed on a regular ba
 \end{table}
 
 \newpage
-\marginpar{interpretation}The results from \cref{tab:results} can be interpreted as follows. For every point a fund scored above the median of three (on the five-point scale) the jump in the IRR of the respective fund equal to the value of the last column. I.e. if a fund scores a four on the question on procedures, the expected IRR is 13.4 percent-point higher than the sample average. (i.e. 17.4\% instead of 3.9\%). Analogously, if a fund scores a four on the question on revision, the expected value is 11.91 percent-point lower than the sample average (i.e. -8\% instead of 3.9\%). Of course, it also works visa versa, mean that for every point scored below the median of three, these percentages are not added but subtracted.\\
+\marginpar{interpretation}
+% BQ 5-2-15:
+As we conducted our analysis with a linear model (OLS), we provide a linear interpretation of these results, a possible future extension could explore non-linearities.
+The results from \cref{tab:results} can be interpreted as follows. For every point a fund scored above the median of three (on the five-point scale) the jump in the IRR of the respective fund equal to the value of the last column. I.e. if a fund scores a four on the question on procedures, the expected IRR is 13.4 percent-point higher than the sample average. (i.e. 17.4\% instead of 3.9\%). Analogously, if a fund scores a four on the question on revision, the expected value is 11.91 percent-point lower than the sample average (i.e. -8\% instead of 3.9\%). Of course, it also works visa versa, mean that for every point scored below the median of three, these percentages are not added but subtracted.\\
 
-\marginpar{application}Using these result we can form expectations on the financial performance of future funds. This is done by asking them to answer these questions on the same five-point scale and adding or subtracting the relevant percentage to the expected IRR based on these answers.
+% BQ 5-2-15: This can for example be done ipv This is done, fund managers ipv them
+\marginpar{application}Using these result we can form expectations on the financial performance of future funds. This can for example be done by asking fund managers to answer these questions on the same five-point scale and adding or subtracting the relevant percentage to the expected IRR based on these answers.
 
 \newpage
 \section{Conclusions and Recommendations}
 \subsection{Conclusions}
 \label{sec:conclusions}
-We find two highly significant coefficients. These can be provide us with insights into the effectiveness of ESMS requirements that EDFIs stipulate for their clients.\\
+% BQ: insights ON ipv into
+We find two highly significant coefficients. These can be provide us with insights on the effectiveness of ESMS requirements that EDFIs stipulate for their clients.\\
 
 \marginpar{consistent application} The first result is that the consistent application of ESMS in the clients asset portfolio is expected to be correlated to a much higher IRR.\\
 
 \marginpar{policy revision} The second result is that continued revision of ESG policy appears to be correlated with a much lower IRR. The interpretation of this is somewhat difficult. However, we could speculate that it is related to the limited life time of private equity fund. Leading constant revision to be of limited added value and more of a distraction. Another explanation could be that the shifting focus makes ESG policy results incomparable over time. %correlated, related or what is the right expression??
 
 \subsection{Recommendations}
+% BQ 5-2-15:
+Finally we present our recommendations based on the conclusions and limitations of this study.
 \paragraph{Further studies}
-The goal of further studies should be to eliminate the identified two limitations. 
+% BQ 5-2-15: An important goal ipv The goal
+An important goal of further studies should be to eliminate the identified two limitations. 
 
 \marginpar{sample size} The first limitation is the sample size. A significant larger sample size could improve the significant findings and the significant results might also apply to other parameters.\\
 
-\marginpar{general PE} Looking at a more general sample of private equity funds and seeing if the same covariations hold as a topic for further studies. We suggest that an approach similar to that of this study could be used.\\
+% BQ 5-2-15: Secondly, covariance holdS
+\marginpar{general PE} Secondly, looking at a more general sample of private equity funds and seeing if the same covariance holds as a topic for further studies. We suggest that an approach similar to that of this study could be used.\\
+
+% BQ 5-2-15:
+In addition, using non-linear methodology could provide further insights.
 
 \marginpar{negative covariation} Lastly we feel that it would be interesting to see why there is such a clear negative covariation between the question: "ESG procedures are consistently applied throughout the PE portfolio" and financial results.
 
