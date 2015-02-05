@@ -1,0 +1,398 @@
+\documentclass[twoside,12pt]{article}
+
+\usepackage{fancyhdr}
+\usepackage{fixltx2e}
+\usepackage{listings}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage{lmodern}
+\usepackage[english]{babel}
+\usepackage{csquotes}
+\usepackage[style=authoryear,backend=biber,maxcitenames=2]{biblatex}
+\usepackage[colorlinks=true,linkcolor=black,citecolor=black,urlcolor=black]{hyperref}
+\usepackage{cleveref}
+\usepackage{nomencl}
+\makenomenclature
+
+\renewcommand{\nomname}{List of Abbreviations}
+
+\addbibresource{report.bib}
+\addbibresource[datatype=bibtex]{../../MBASUSManagement/Mastermodule/bib/myref.bib}
+
+\pagestyle{fancy}
+
+\makeatletter
+\let\@fnsymbol\@arabic
+\makeatother
+
+\makeatletter
+\def\@seccntformat#1{\llap{\csname the#1\endcsname\quad}}
+\makeatother
+
+\let\oldmarginpar\marginpar
+\renewcommand\marginpar[1]{\-\oldmarginpar[\raggedleft\footnotesize #1]
+{\raggedright\footnotesize #1}}
+
+\newcommand*\samethanks[1][\value{footnote}]{\footnotemark[#1]}
+
+\lstset{numbers=left, frame=single, breaklines=true, breakatwhitespace=false, numberstyle=\footnotesize}
+
+\title{On the Relation Between PE Funds' Environmental, Social, and Governance Management and their Financial Performance}
+\author{Bastiaan Quast \and Hans-Stefan Michelberger \and Walter van Helvoirt \thanks{FMO, Anna van Saksenlaan 71, The Hague, The Netherlands, \url{www.fmo.nl}}}
+
+\begin{document}
+\maketitle
+\vspace{\stretch{1}}
+\abstract{\noindent This study attempts to show relation (covariates) between Private Equity funds' Environmental, Social, and Governance (ESG) management, and their financial performance. For this study we used data from the investments of two European Development Finance Institutes and answers from a questionnaire sent to the invested-in funds. We find that there are some aspects of ESG management which have a covariation with financial performance. This allows us to formulate expectations for the financial performance of future funds, based on their ESG approach.}
+\pagebreak	
+
+\tableofcontents
+\listoftables
+
+\printnomenclature[1.8cm]
+\addcontentsline{toc}{section}{List of Abbreviations}
+
+\newpage
+\section{Introduction}
+Implementing Environmental, Social and Governance (ESG)\nomenclature{ESG}{Environmental, Social and Governance} criteria as part of long-term company valuation by financial institutions has been a highly debated topic in recent years \parencite{gs}. Development Finance Institutions \nomenclature{DFI's}{Development Finance Institutions}(DFIs) implement ESG criteria in their investment decisions to support sustainable growth in emerging and developing markets. By financing businesses that achieve financial return while protecting and enhancing human and natural resources (which is referred to as sustainable business) investments stimulate social, environmental and economic development.\\
+
+\marginpar{purpose} The purpose of this study is to see if there is a relation to be found between Private Equity (PE)\nomenclature{PE}{Private Equity} funds' Environmental and Social Management Systems (ESMS)\nomenclature{ESMS}{Environmental and Social Management Systems}, and their financial performance. For this we used data from the investments of two European Development Finance Institutes (EDFIs), namely FMO \nomenclature{FMO}{Dutch Development Bank - Financieringsmaantschappij voor Ontwikkelingslanden} and DEG \nomenclature{DEG}{Deutsche Entwicklungsgesellschaft}, and answers from a questionnaire sent to the invested-in funds. We find that there are some aspects of ESMS which appear to have an either positive or negative covariation with financial performance.\\
+
+\marginpar{background} Within DFIs it is often assumed that taking ESG aspects into consideration of investments decisions increases and stabilizes financial returns of investments. The way investments funds are integrating ESG aspects in their decision making process is via an ESMS. In an ESMS the governance aspect is usually not considered and can create confusion in the terminology: Industry standard is the expression ESG whereas in the management systems asked by the DFIs focus mainly the environmental and social aspect. \\
+
+ESG issues are a particular set of extra or non-financial aspects of a company, which can be material to its success and can also be representative of management quality. Additionally, it can give an indication of future trends and reflect issues regarding climate change that can change the economic landscape in which companies operate \parencite[cf.][1]{llewellyn2007business}. If ESG issues are material to business success, then there should be a relation between strong ESG performance and financial results, be it causal relation or any other relation. 
+
+\newpage
+\marginpar{fund specifics}All ESG studies concerns investments of different investment vehicles in companies. Private equity funds, in which the DFI's have invested, do the same. However, the DFI's don't have the data of the underlying companies in which the funds are investing. The ESG information available concerns only the ESMS. Applying and ESMS with certain ESG criteria therefore could be a proxy of the ESG performance of the investees. \\
+
+\marginpar{ESG studies} In the past, various (meta) analysis have been performed to investigate the relations between ESG and financial performance \parencites{orlitzky2003corporate}{mercer2} with mixes results. Deutsche Bank Climate Change Advisors \parencite{dbcca} performed a more recent meta-analysis based on academic research in the period from 1991 - 2009. The conclusions of this analysis are:
+
+\begin{itemize}\itemsep1pt \parskip0pt \parsep0pt
+\item The mixed and sometimes contradictory results in previous research was a result of mixing all types of "sustainable investing". Unscrambling the different types of "sustainable investing" (SRI, ESG, IR etc) gives a clearer picture with regard to financial results and/or costs of capital;
+\item Regarding ESG, the study found a 100\% positive score for the correlation between high ESG rating and (ex ante) cost of capital for both equity and debt. The best results had companies that placed responsibility for ESG within the office of the CFO;
+\item The vast majority of the studies found that companies with high ESG rating outperformed companies with a lower ESG rating in terms of financial results (89\% and 85\%, for market based and accounting based, respectively);
+\item Corporate governance issues showed the highest impact on financial aspects, followed by environmental issues and then social issues;
+\item Social responsible investment funds struggled the most to show financial out-performance. In fact, most studies showed mixed results. 
+\end{itemize}
+
+\newpage
+\marginpar{hypothesis} For our study we formalized the following research question, whereby $x_i$ denotes all the questions in the questionnaire sent to the invested-in funds. The research questions is formalized as:\\
+\\
+Formal statement For $x_i$ is $x_1...x_n$:\\
+\\
+\begin{tabular}{l p{11cm}}
+H\textsubscript{0}:&There is no covariation between $x_i$ and the financial performance of a private equity fund.\\
+\\
+H\textsubscript{1}:&There is a covariation between $x_i$  and the financial performance of a private equity fund.
+\end{tabular}\\
+\\
+
+\marginpar{paper overview} A chronological description of how this study is structured can be found in \cref{sec:approach}. \Cref{sec:data} gives an overview of the data used and provides explanations for the suitability. After which \cref{sec:methodology} discusses the methodology used in the analysis (command code in \cref{app:commandcode}). \Cref{sec:results} gives a brief  of the results we found. Finally in \cref{sec:conclusions} we draw conclusions from the results and indicate some limitations of these results.
+
+\newpage
+\section{Approach}
+\label{sec:approach}
+Here we briefly describe the approach that was used. We first outline the different phases of the study chronologically and then describe each phase individually. The study was divided in roughly five phases. The first being the planning and discussion phase. The second was the pilot phase. Data collection was done in the third phase. Lastly, the fourth phase focused on data analysis and reporting.\\
+
+\marginpar{planning, discussion} The first phase was set out for planning and initial conceptual discussions and spanned about six weeks. Whereby we considered the different problems which we expected to confront during the course of the study as well as the problems that would present themselves when interpreting the results. The theoretical problems related to the interpretation are discussed in \cref{sec:methodology}. As sources for our study we settled on financial statistics as they are available through internal account systems. The ESG element of our study was analyzed using a questionnaire (i.e.~self declaration), to be filled out by the selected funds. This questionnaire is based on a questionnaire developed by \textcite{renssen}, but was adapted to suit the specific purpose of this study.\\
+
+\marginpar{pilot} After having developed an initial version of the questionnaire, we sent this out to a small number of funds selected for our pilot phase. By running a pilot round we were able to evaluate the questionnaire using input from respondents. This allowed us to clarify questions where needed, and make sure that they give an accurate representation of ESMS. A number of evaluations were done face to face, the rest was done through conference calls. The evaluations were used to produce an improved version of the questionnaire (see \cref{app:questionnaire}). This phase also took about four weeks.\\
+\newpage
+\marginpar{data collection} In the third phase of the study we sent out the augmented questionnaire to all funds from the FMO and DEG portfolios. In total we received a response from 36 funds in which either DEG, FMO or both had invested. This took three weeks. %check number of funds
+The financial data was calculated using cash flows from the accounting systems and fair values. Using Euro and Dollar cash flows we calculated the internal rates of return.\\
+
+\marginpar{data analysis} In the fourth phase we analyzed the data gathered in the third phase. We decided to focus on covaries (more on this in \cref{sec:methodology}).\\
+
+\marginpar{reporting} Lastly, in the fifth phase, we wrote this report. Data analysis and writing combined took us about three weeks.
+
+\newpage
+\section{Data}
+\label{sec:data}
+\subsection{General}
+For this study, we gathered data on financial performance of funds and on ESG management systems of funds.\\
+
+\marginpar{selection bias} All of the selected fund manager or General Partner (GP)\nomenclature{GP}{General Partner}has at least one EDFI investor as Limited Partner (LP)\nomenclature{LP}{Limited Partner}.   This means that they already have to meet certain requirements on their ESMS; which are generally higher than for funds with no DFI as LP. This gives rise to a selection bias problem. All of the selected funds are active mainly in developing countries, but this is as typical the case for DFI investment. The results therefore are probably not direct applicable for funds in developed countries.\\
+
+\marginpar{financials} The financial data was more or less available through internal systems in the forms of cost multiples and internal rates of return. It has to be noted that most funds are still in the investment phase, which means that the Financial Performance Indicators were partly based on fair values. Fair values are just realistic estimates of the current remaining value of an investment. However, fair values are an accepted standard practice in the PE industry for calculating financial statistics and are considered to be a good indication.\\
+
+\marginpar{questionnaire} The ESG data was less readily available. Therefore we designed a questionnaire, which was sent out to all selected fund managers. In general we tried to include as many fund managers as possible in our sample. However, in some cases we had to exclude a fund. We only included fund managers (GP) once, meaning that if e.g.~repeat funds were also invested in, we did not include those. In general we chose to select the oldest funds because financial data in these cases is more reliable due to the fact that financial performance is less based on fair values but more on realized values (exits).  Furthermore, we did not include specific funds like infrastructure funds or micro finance funds. 
+
+\newpage
+\subsection{Financial performance indicators}
+There are a number of issues related to the selection of the correct measures of financial performance. Most notable is the issue of which currency to use for denotation.\\
+
+\marginpar{currencies} The matter of currencies used is somewhat complicated. The investments of funds are usually in the target countries' local currencies. However, committed amounts are, according to industry practice, denoted in U.S.~Dollars. Furthermore, since FMO and DEG are based in the Eurozone, transactions are recorded in Euro. These Euro transactions formed the basis for the calculation of our Euro denoted financials. Using the Bloomberg's end-of-day exchange rates, each amount is also converted into U.S. Dollars after which the financials are calculated again.\\
+
+\marginpar{IRR, money multiple}The financials referred to above are the Internal Rate of Return (IRR)\nomenclature{IRR}{Internal Rate of Return} and the cost multiple.
+
+\paragraph{statistics}
+In order to give some idea as to the date we have used, we provide descriptive statistics about the financial data in \cref{tab:finstat}.
+
+\begin{table}[!h]
+\centering
+\caption{Financial statistics}
+\label{tab:finstat}
+\begin{tabular}{l|r}
+Financial & Average\\
+\hline
+IRR EURO & 3.9 \% \\
+IRR U.S. Dollar & 8.27\% \\
+Money Multiple Euro & 1.26 \\
+Money Multiple U.S. Dollar & 1.46
+\end{tabular}
+\end{table}
+
+\newpage
+\subsection{ESG Questionnaire design}
+\marginpar{design}Our questionnaire design is based to a large extent on a questionnaire designed for another study \parencite{renssen}, which we have adapted to fit our requirements. Our questionnaire tries to capture a funds ESMS by looking at (see also \cref{app:questionnaire}):
+\begin{itemize}
+	\item Policy drivers
+	\item Procedures
+	\item Management commitment
+	\item Integration of procedures
+	\item Monitor
+	\item Reporting
+	\item Organizational capacity
+	\item Stakeholder engagement
+\end{itemize}
+
+\marginpar{question form}The general form question used was a statement relating to the ESG management of funds. These statements where preceded by the instruction: ``Grade the validity of the following statements (1 is completely false, 5 is completely true)''. On a row of radio buttons, labeled one through five, the participants could indicate the degree to which the statement agreed with the state of affairs for the fund under their management.\\
+
+\marginpar{ordinality}By only labeling the one and the five radio buttons, and not the ones in between, we preserve ordinality. this entails that the difference between e.g.~1 and 2 on our five point scale, is equal to the difference between e.g.~3 and 4, etc.
+
+\paragraph{statistics}
+Our second source of input data is the ESMS questionnaire, in \cref{tab:qstat} we provide some descriptive statistics on this.
+
+\begin{table}[!h]
+\begin{center}
+\caption{Questionnaire statistics}
+\label{tab:qstat}
+\begin{tabular}{p{8cm}|r}
+Question & Mean\\
+\hline
+ESG procedures are consistently applied throughout the PE portfolio & 4.324324\\
+Internal implementation of ESG policy and procedures is reviewed on a regular basis & 3.702703
+\end{tabular}
+\end{center}
+\end{table}
+%This table I do not understand. Why these two examples, why at all examples with some results here??
+
+\newpage
+\section{Methodology}
+\label{sec:methodology}
+In this section we present a more technical discussion of some of the theoretical issues we confronted during the course of the study. The section starts with a discussion of the covariation and causality, whereby we clarify our approach of looking at covariation rather than causality. After which we describe the empirical methodology used.
+
+\subsection{Covariation and causation}
+Here we discuss why a covariation can be expected and how it relates to a causal relation.\\
+
+\marginpar{causal effect} First and foremost ESG risk management can a have a causal effect on financial performance. Reasons for this can be the mitigation related to for example reputational damage or government supervision.\\
+
+\marginpar{confounding variables} Another likely factor in explaining covariation is confounding variables. Meaning that there are unobserved factors which effect both ESG risk management as well as financial performance. An example of this could be structured management, which would implement ESG risk management allowing with other policies which would effect financial performance.\\
+
+\marginpar{reverse causality} Lastly we can even consider the case for reverse causality, whereby a financially well performing fund has the resources to implement sound ESG risk management.\\
+
+To ensure that our findings are as reliable as possible, and considering the above, we decided to the focus on the covariation between these ESMS and financials.\\
+
+\subsection{Empirical Methodology}
+In this section we describe the methodology employed in the course of this study. In particular it describes our approach to dealing with the problem related to the degrees of freedom which occurred.\\
+
+\marginpar{degrees of freedom} As our criteria for inclusion in the dataset were somewhat stringed, our dataset was a bit small. This combined with the large number of variables, due to the inclusion of all questions caused a degrees of freedom problem in our analysis.\\
+
+\marginpar{grouping} In order to cope with the problem of the degrees of freedom, we used the following workaround. We first grouped the questions according to which aspect of ESG management systems the question addressed. We then regressed the explanandum (IRR) on each of the groups individually using Ordinary Least Squares (i.e.~standard regression). By doing this we limit the number of variables in each regression, and thus circumvent the degrees of freedom problem. Since questions within a group are expected to be heavily correlated, all coefficients are expected to be underestimated by the regression. However, it allows us to see which variables are more explanatory. We then select these highly explanatory variables for a final regression equation.\\
+
+\marginpar{ordinary least squares} As mentioned above, we chose to use the ordinary least squares (OLS)\nomenclature{OLS}{Ordinary Last Square} regression algorithm. Since OLS is a straightforward statistical method we avoid the problems which tend to occur when using more complicated statistical procedures.
+
+
+\subsection{Limitations}
+The study has two limitations: 
+\begin{enumerate} \itemsep1pt \parskip0pt \parsep0pt
+\item The sample size was rather small. Event we could find two significant variables a larger data set would probably underpin these variables better and we might find additional significant variables;
+\item The study is done for a niche  PE segment market. The conclusions can only be applied to investments in the emerging markets, i.g. similar to an investment portfolio like DEG and FMO.
+\end{enumerate}
+
+
+\section{Results}
+\label{sec:results}
+This section presents the results of the statistical analysis (covaries) and then gives an explanation of how to interpret these results and apply these in a normative manner (i.e.~how to use these number as benchmark for future investments).\\
+
+The results of the estimation using the internal rate of return (denoted in Euro) and the significant variables can be found in  \cref{tab:fin}.
+
+\begin{table}[!hb]
+\centering
+\caption{Final Regression}
+\label{tab:fin}
+\begin{tabular}{rrrrr}
+  \hline
+ & Estimate & Std. Error & t value & Pr($>$ $|$ t $ | $) \\ 
+  \hline
+(Intercept) & -0.1107 & 0.1315 & -0.84 & 0.4089 \\ 
+  Q0002\_SQ007 & 0.1340 & 0.0450 & 2.98 & 0.0069 \\ 
+  Q0004\_SQ004 & -0.1191 & 0.0378 & -3.15 & 0.0046 \\ 
+   \hline
+\end{tabular}
+\end{table}
+
+
+\marginpar{significance}The parameters of questions Q0002\_SQ007\footnote{ESG procedures are consistently applied throughout the PE portfolio} and Q0004\_SQ004\footnote{Internal implementation of ESG policy and procedures is reviewed on a regular basis} are both highly significant. Question Q0002\_Q007 has a positive coefficient. Question Q0004\_SQ004 has a negative coefficient. The intercept is insignificant at any acceptable levels.\\
+
+On the one hand, Q0002\_Q007 is significant with a positive coefficient meaning we can conclude that a better performance on this aspect is correlated with higher financial returns. On the other hand, Q0004\_SQ004 has a negative coefficient which is very significant. This leads us to conclude that a higher performance with regard to this is correlated with lower financial performance and visa versa.\\
+
+In \cref{tab:results} we present the results of our analysis, which are significant.
+
+\begin{table}[!h]
+\begin{center}
+\caption{Estimation results}
+\label{tab:results}
+\begin{tabular}{p{8cm}rr}
+Question & Ratio & Percentage\\
+\hline
+ESG procedures are consistently applied throughout the PE portfolio & 0.1340 & 13.4\% \\
+Internal implementation of ESG policy and procedures is reviewed on a regular basis & -0.1191 & -11.91\% \\
+\end{tabular}
+\end{center}
+\end{table}
+
+\newpage
+\marginpar{interpretation}The results from \cref{tab:results} can be interpreted as follows. For every point a fund scored above the median of three (on the five-point scale) the jump in the IRR of the respective fund equal to the value of the last column. I.e. if a fund scores a four on the question on procedures, the expected IRR is 13.4 percent-point higher than the sample average. (i.e. 17.4\% instead of 3.9\%). Analogously, if a fund scores a four on the question on revision, the expected value is 11.91 percent-point lower than the sample average (i.e. -8\% instead of 3.9\%). Of course, it also works visa versa, mean that for every point scored below the median of three, these percentages are not added but subtracted.\\
+
+\marginpar{application}Using these result we can form expectations on the financial performance of future funds. This is done by asking them to answer these questions on the same five-point scale and adding or subtracting the relevant percentage to the expected IRR based on these answers.
+
+\newpage
+\section{Conclusions and Recommendations}
+\subsection{Conclusions}
+\label{sec:conclusions}
+We find two highly significant coefficients. These can be provide us with insights into the effectiveness of ESMS requirements that EDFIs stipulate for their clients.\\
+
+\marginpar{consistent application} The first result is that the consistent application of ESMS in the clients asset portfolio is expected to be correlated to a much higher IRR.\\
+
+\marginpar{policy revision} The second result is that continued revision of ESG policy appears to be correlated with a much lower IRR. The interpretation of this is somewhat difficult. However, we could speculate that it is related to the limited life time of private equity fund. Leading constant revision to be of limited added value and more of a distraction. Another explanation could be that the shifting focus makes ESG policy results incomparable over time. %correlated, related or what is the right expression??
+
+\subsection{Recommendations}
+\paragraph{Further studies}
+The goal of further studies should be to eliminate the identified two limitations. 
+
+\marginpar{sample size} The first limitation is the sample size. A significant larger sample size could improve the significant findings and the significant results might also apply to other parameters.\\
+
+\marginpar{general PE} Looking at a more general sample of private equity funds and seeing if the same covariations hold as a topic for further studies. We suggest that an approach similar to that of this study could be used.\\
+
+\marginpar{negative covariation} Lastly we feel that it would be interesting to see why there is such a clear negative covariation between the question: "ESG procedures are consistently applied throughout the PE portfolio" and financial results.
+
+\paragraph{Final recommendation}
+\marginpar{ESMS impact} Using the results from this study, we would like to make the following recommendation. The high impact of the application of ESG policies and procedures should steer DFIs in their fund evaluation, contracting and monitoring.
+
+\newpage
+\addcontentsline{toc}{section}{References}
+\printbibliography
+
+
+\newpage
+\noindent
+
+\appendix
+\addcontentsline{toc}{section}{\large Appendices}
+
+Here we provide the appendices, which present background information regarding the questionnaire (data collection, \cref{app:questionnaire}) and analysis (command code, \cref{app:commandcode}).
+
+
+\section{Questionnaire}
+\label{app:questionnaire}
+Below are the questions from the ESG questionnaire. Unless mentioned otherwise, all questions are statements which have to graded on their validity, 1 being completely false, and 5 being completely true. The instruction for this was:
+
+\begin{lstlisting}
+Grade the following statements on their validity
+1 is completely false, 5 is completely true
+\end{lstlisting}
+This statement was used for all questions the following questions, unless mentioned otherwise.
+
+\subsection{Management commitment}
+\begin{lstlisting}
+Sustainability of investment is a pillar of our mission and vision
+We have defined ambitious goals regarding ESG
+Environmental policy is based on international standards
+Social policy is based on international standards
+Strategic responsibility for ESG
+Operational responsibility for ESG
+What drives you ESG policy? (Financial results, compliance or in between)
+\end{lstlisting}
+
+\subsection{Organisational capacity}
+\begin{lstlisting}
+There is sufficient staff capacity to implement ESG Policy
+The ESG responsible staff is sufficiently knowledgeable
+The ESG responsible staff is positioned in the right place inside the fund
+Non-specialist staff has a good understanding of ESG issues
+Non-specialist staff has a good understanding of ESG issues
+Sufficient ESG training for staff is provided.
+Non-specialist ESG training enables the making of low-ESG-risk client assesments.
+For each of the below, sufficient time is available and spent on ESG
+\end{lstlisting}
+
+\subsection{Procedures}
+\begin{lstlisting}
+Non-specialist staff has a good understanding of ESG issues
+ESG procedures are consistently applied throughout the PE portfolio
+ESG procedures are fully integrated into the investment process.
+ESG screening documentation is fully standardized.
+Internal implementation of ESG policy and procedures is reviewed on a regular basis.
+There is a structured continuous-improvement process based on the outcome of reviews and international best practices.
+\end{lstlisting}
+
+\subsection{Integration}
+\begin{lstlisting}
+ESG is actively considered in the investee company selection phase.
+ESG responsible staff is consulted in the investee company selection phase.
+\end{lstlisting}
+
+\subsection{Consulting}
+\begin{lstlisting}
+Assessments of external consultants are adequately transformed into Environmental and Social Action Plans (ESAPs.
+\end{lstlisting}
+
+\subsection{Monitor}
+\begin{lstlisting}
+The monitoring of ESAPs is done regularly and effectively.
+There is active engagement with investee companies on ESG during due diligence and contracting.
+Investee company's ESG performance is actively monitored against agreed standards.
+\end{lstlisting}
+
+\subsection{Reporting}
+\begin{lstlisting}
+ESG reporting is fully integrated in the annual financial report.
+The ESG report contains specific ESG goals for the next year.
+\end{lstlisting}
+
+\subsection{Stakeholder engagement}
+\begin{lstlisting}
+ESG reporting content is externally validated.
+We have done comprehensive stakeholder mapping.
+There is a formal grievance procedure for external stakeholders.
+\end{lstlisting}
+
+
+\newpage
+\section{Command code}
+\label{app:commandcode}
+\lstset{language=R}
+The statistical analysis for this study was done using R. In order to make this study as replicable as possible, all R code used is given below. The data used can be obtained from the authors upon request. All code placed after the hashtag (\#) are comments. These are intended for clarification and do not need to be entered into R.
+
+\subsection{Installing Packages}
+All statistical analysis is done using the computational programming environment R. In order to perform all computations, we require several R packages (extensions). To install the required R package we use these commands.
+\lstinputlisting{packages.R}
+
+\subsection{Importing the CSV}
+From the Limeservice menu we downloaded the anonymised data as Comma Separated Value (CSV) file. The data from this file can then be imported into R using the following R command code.
+\lstinputlisting{import.R}
+
+\subsection{Descriptive Statistics}
+To extract the financial statistics, we have used the command code, printed below.
+\lstinputlisting{descriptive.R}
+
+\subsection{Within Categories}
+As mentioned in the methodology section (\cref{sec:methodology}), due to the limitations on the degrees of freedom, we first looked at the most promising variables in each category. The code used for this, is printed below.
+\lstinputlisting{within_categories.R}
+
+\subsection{Final Regression}
+For estimating the eventual regression equation we use the command code given below.
+\lstinputlisting{final.R}
+
+\end{document}
